@@ -54,7 +54,7 @@
                   </div>
                </div>
 
-               <div class="cart-item">
+               <div class="cart-item sub-total">
                   <div class="row">
 
                      <div class="col-md-8">
@@ -85,7 +85,7 @@
       let cases = parseInt(document.getElementById('inputCase').value);
 
       document.getElementById('minusPhone').addEventListener('click', function () {
-         phones--;
+         if (phones > 0) phones--;
          updateAmount('inputPhone', 'phoneAmount', phones, phonePrice);
          updateTotal();
 
@@ -97,7 +97,7 @@
       });
       //case buttons event handler
       document.getElementById('minusCase').addEventListener('click', function () {
-         cases--;
+         if (cases > 0) cases--;
          updateAmount('inputCase', 'caseAmount', cases, casePrice);
          updateTotal();
 
